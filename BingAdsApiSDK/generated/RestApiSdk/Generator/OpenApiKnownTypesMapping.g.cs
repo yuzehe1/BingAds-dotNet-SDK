@@ -239,9 +239,8 @@ public static partial class RestApiGeneration
                 { typeof(Microsoft.BingAds.V13.CampaignManagement.BiddingScheme), "BiddingScheme" } }
             },
             { typeof(Microsoft.BingAds.V13.CampaignManagement.CampaignCriterion), new Dictionary<Type, string> {                
-                { typeof(Microsoft.BingAds.V13.CampaignManagement.BiddableCampaignCriterion), "BiddableCampaignCriterion" },
                 { typeof(Microsoft.BingAds.V13.CampaignManagement.NegativeCampaignCriterion), "NegativeCampaignCriterion" },
-                { typeof(Microsoft.BingAds.V13.CampaignManagement.CampaignCriterion), "CampaignCriterion" } }
+                { typeof(Microsoft.BingAds.V13.CampaignManagement.BiddableCampaignCriterion), "BiddableCampaignCriterion" } }
             },
             { typeof(Microsoft.BingAds.V13.CampaignManagement.ConversionGoal), new Dictionary<Type, string> {                
                 { typeof(Microsoft.BingAds.V13.CampaignManagement.InStoreTransactionGoal), "InStoreTransaction" },
@@ -260,6 +259,7 @@ public static partial class RestApiGeneration
                 { typeof(Microsoft.BingAds.V13.CampaignManagement.GenreCriterion), "GenreCriterion" },
                 { typeof(Microsoft.BingAds.V13.CampaignManagement.DealCriterion), "DealCriterion" },
                 { typeof(Microsoft.BingAds.V13.CampaignManagement.StoreCriterion), "StoreCriterion" },
+                { typeof(Microsoft.BingAds.V13.CampaignManagement.CustomLinkedInCriterion), "CustomLinkedInCriterion" },
                 { typeof(Microsoft.BingAds.V13.CampaignManagement.ProfileCriterion), "ProfileCriterion" },
                 { typeof(Microsoft.BingAds.V13.CampaignManagement.AudienceCriterion), "AudienceCriterion" },
                 { typeof(Microsoft.BingAds.V13.CampaignManagement.LocationIntentCriterion), "LocationIntentCriterion" },
@@ -325,7 +325,6 @@ public static partial class RestApiGeneration
                 { typeof(Microsoft.BingAds.V13.CampaignManagement.RuleItem), "RuleItem" } }
             },
             { typeof(Microsoft.BingAds.V13.CampaignManagement.Setting), new Dictionary<Type, string> {                
-                { typeof(Microsoft.BingAds.V13.CampaignManagement.ImpressionTrackingSetting), "ImpressionTrackingSetting" },
                 { typeof(Microsoft.BingAds.V13.CampaignManagement.NetworkDistributionSetting), "NetworkDistributionSetting" },
                 { typeof(Microsoft.BingAds.V13.CampaignManagement.AISearchSetting), "AISearchSetting" },
                 { typeof(Microsoft.BingAds.V13.CampaignManagement.BaseDomainSetting), "BaseDomainSetting" },
@@ -401,6 +400,7 @@ public static partial class RestApiGeneration
                 { typeof(Microsoft.BingAds.V13.Reporting.ApplicationFault), "ApplicationFault" } }
             },
             { typeof(Microsoft.BingAds.V13.Reporting.ReportRequest), new Dictionary<Type, string> {                
+                { typeof(Microsoft.BingAds.V13.Reporting.SearchTermLandingPageReportRequest), "SearchTermLandingPageReportRequest" },
                 { typeof(Microsoft.BingAds.V13.Reporting.MMMPerformanceReportRequest), "MMMPerformanceReportRequest" },
                 { typeof(Microsoft.BingAds.V13.Reporting.MSClickIdPerformanceReportRequest), "MSClickIdPerformanceReportRequest" },
                 { typeof(Microsoft.BingAds.V13.Reporting.BidStrategyReportRequest), "BidStrategyReportRequest" },

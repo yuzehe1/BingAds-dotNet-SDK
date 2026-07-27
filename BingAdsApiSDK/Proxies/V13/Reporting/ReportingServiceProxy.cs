@@ -114,6 +114,7 @@ namespace Microsoft.BingAds.V13.Reporting
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Microsoft.BingAds.V13.Reporting.BidStrategyReportRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Microsoft.BingAds.V13.Reporting.MSClickIdPerformanceReportRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Microsoft.BingAds.V13.Reporting.MMMPerformanceReportRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Microsoft.BingAds.V13.Reporting.SearchTermLandingPageReportRequest))]
     public partial class ReportRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
     {
         
@@ -4981,6 +4982,110 @@ namespace Microsoft.BingAds.V13.Reporting
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SearchTermLandingPageReportRequest", Namespace="https://bingads.microsoft.com/Reporting/v13")]
+    [System.SerializableAttribute()]
+    public partial class SearchTermLandingPageReportRequest : Microsoft.BingAds.V13.Reporting.ReportRequest
+    {
+        
+        private Microsoft.BingAds.V13.Reporting.ReportAggregation AggregationField;
+        
+        private System.Collections.Generic.IList<Microsoft.BingAds.V13.Reporting.SearchTermLandingPageReportColumn> ColumnsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Microsoft.BingAds.V13.Reporting.SearchTermLandingPageReportFilter FilterField;
+        
+        private Microsoft.BingAds.V13.Reporting.AccountThroughCampaignReportScope ScopeField;
+        
+        private Microsoft.BingAds.V13.Reporting.ReportTime TimeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public Microsoft.BingAds.V13.Reporting.ReportAggregation Aggregation
+        {
+            get
+            {
+                return this.AggregationField;
+            }
+            set
+            {
+                if ((this.AggregationField.Equals(value) != true))
+                {
+                    this.AggregationField = value;
+                    this.RaisePropertyChanged("Aggregation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.Collections.Generic.IList<Microsoft.BingAds.V13.Reporting.SearchTermLandingPageReportColumn> Columns
+        {
+            get
+            {
+                return this.ColumnsField;
+            }
+            set
+            {
+                if ((object.ReferenceEquals(this.ColumnsField, value) != true))
+                {
+                    this.ColumnsField = value;
+                    this.RaisePropertyChanged("Columns");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Microsoft.BingAds.V13.Reporting.SearchTermLandingPageReportFilter Filter
+        {
+            get
+            {
+                return this.FilterField;
+            }
+            set
+            {
+                if ((object.ReferenceEquals(this.FilterField, value) != true))
+                {
+                    this.FilterField = value;
+                    this.RaisePropertyChanged("Filter");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public Microsoft.BingAds.V13.Reporting.AccountThroughCampaignReportScope Scope
+        {
+            get
+            {
+                return this.ScopeField;
+            }
+            set
+            {
+                if ((object.ReferenceEquals(this.ScopeField, value) != true))
+                {
+                    this.ScopeField = value;
+                    this.RaisePropertyChanged("Scope");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public Microsoft.BingAds.V13.Reporting.ReportTime Time
+        {
+            get
+            {
+                return this.TimeField;
+            }
+            set
+            {
+                if ((object.ReferenceEquals(this.TimeField, value) != true))
+                {
+                    this.TimeField = value;
+                    this.RaisePropertyChanged("Time");
+                }
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ReportFormat", Namespace="https://bingads.microsoft.com/Reporting/v13")]
     public enum ReportFormat : int
@@ -6710,6 +6815,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         NewCustomerSpend = 131,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 132,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 133,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 134,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -8031,6 +8145,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GoalId = 103,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 104,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 105,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 106,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8507,6 +8630,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GoalId = 91,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 92,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 93,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 94,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9107,6 +9239,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GoalId = 79,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 80,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 81,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 82,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9230,6 +9371,9 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         PhraseCloseVariant = 16,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AIOptimized = 32,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -9608,6 +9752,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ViewThroughRevenue = 61,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 62,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 63,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 64,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -9918,6 +10071,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         AssetGroupStatus = 37,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 38,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 39,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 40,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -10135,85 +10297,103 @@ namespace Microsoft.BingAds.V13.Reporting
         CustomLinkedInName = 12,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AdDistribution = 13,
+        LinkedInSegmentName = 13,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Impressions = 14,
+        LinkedInSegmentId = 14,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Clicks = 15,
+        LinkedInSegmentType = 15,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Spend = 16,
+        AdDistribution = 16,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Conversions = 17,
+        Impressions = 17,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Language = 18,
+        Clicks = 18,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Assists = 19,
+        Spend = 19,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Revenue = 20,
+        Conversions = 20,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AccountStatus = 21,
+        Language = 21,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CampaignStatus = 22,
+        Assists = 22,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AdGroupStatus = 23,
+        Revenue = 23,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AveragePosition = 24,
+        AccountStatus = 24,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AllConversions = 25,
+        CampaignStatus = 25,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AllRevenue = 26,
+        AdGroupStatus = 26,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ViewThroughConversions = 27,
+        AveragePosition = 27,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Goal = 28,
+        AllConversions = 28,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        GoalType = 29,
+        AllRevenue = 29,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AbsoluteTopImpressionRatePercent = 30,
+        ViewThroughConversions = 30,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        TopImpressionRatePercent = 31,
+        Goal = 31,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ConversionsQualified = 32,
+        GoalType = 32,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AllConversionsQualified = 33,
+        AbsoluteTopImpressionRatePercent = 33,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ViewThroughConversionsQualified = 34,
+        TopImpressionRatePercent = 34,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ViewThroughRevenue = 35,
+        ConversionsQualified = 35,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CampaignType = 36,
+        AllConversionsQualified = 36,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AssetGroupId = 37,
+        ViewThroughConversionsQualified = 37,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AssetGroupName = 38,
+        ViewThroughRevenue = 38,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AssetGroupStatus = 39,
+        CampaignType = 39,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AssetGroupId = 40,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AssetGroupName = 41,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AssetGroupStatus = 42,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 43,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 44,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 45,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -10557,6 +10737,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         CPS = 80,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 81,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 82,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 83,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -10948,6 +11137,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         LowQualitySophisticatedClicks = 76,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 77,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 78,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 79,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -11391,6 +11589,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         AssetGroupStatus = 60,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 61,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 62,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 63,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -11697,6 +11904,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GoalId = 41,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 42,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 43,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 44,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -12010,6 +12226,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ConversionDelay = 30,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 31,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 32,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 33,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -12716,6 +12941,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GoalId = 53,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 54,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 55,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 56,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -13026,6 +13260,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         AllConversionsQualified = 49,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 50,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 51,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 52,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -13152,157 +13395,172 @@ namespace Microsoft.BingAds.V13.Reporting
         AdGroupId = 7,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AudienceId = 8,
+        AssetGroupName = 8,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AudienceName = 9,
+        AssetGroupId = 9,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AssociationStatus = 10,
+        AudienceId = 10,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        BidAdjustment = 11,
+        AudienceName = 11,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        TargetingSetting = 12,
+        AssociationStatus = 12,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Impressions = 13,
+        BidAdjustment = 13,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Clicks = 14,
+        TargetingSetting = 14,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Ctr = 15,
+        Impressions = 15,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AverageCpc = 16,
+        Clicks = 16,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Spend = 17,
+        Ctr = 17,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AveragePosition = 18,
+        AverageCpc = 18,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Conversions = 19,
+        Spend = 19,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ConversionRate = 20,
+        AveragePosition = 20,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CostPerConversion = 21,
+        Conversions = 21,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Revenue = 22,
+        ConversionRate = 22,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ReturnOnAdSpend = 23,
+        CostPerConversion = 23,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        RevenuePerConversion = 24,
+        Revenue = 24,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AccountStatus = 25,
+        ReturnOnAdSpend = 25,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CampaignStatus = 26,
+        RevenuePerConversion = 26,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AdGroupStatus = 27,
+        AccountStatus = 27,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AudienceType = 28,
+        CampaignStatus = 28,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        BaseCampaignId = 29,
+        AdGroupStatus = 29,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AllConversions = 30,
+        AudienceType = 30,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AllRevenue = 31,
+        BaseCampaignId = 31,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AllConversionRate = 32,
+        AllConversions = 32,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AllCostPerConversion = 33,
+        AllRevenue = 33,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AllReturnOnAdSpend = 34,
+        AllConversionRate = 34,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AllRevenuePerConversion = 35,
+        AllCostPerConversion = 35,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AssociationId = 36,
+        AllReturnOnAdSpend = 36,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AssociationLevel = 37,
+        AllRevenuePerConversion = 37,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ViewThroughConversions = 38,
+        AssociationId = 38,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Goal = 39,
+        AssociationLevel = 39,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        GoalType = 40,
+        ViewThroughConversions = 40,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AbsoluteTopImpressionRatePercent = 41,
+        Goal = 41,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        TopImpressionRatePercent = 42,
+        GoalType = 42,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AverageCpm = 43,
+        AbsoluteTopImpressionRatePercent = 43,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ConversionsQualified = 44,
+        TopImpressionRatePercent = 44,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AllConversionsQualified = 45,
+        AverageCpm = 45,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ViewThroughConversionsQualified = 46,
+        ConversionsQualified = 46,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ViewThroughRevenue = 47,
+        AllConversionsQualified = 47,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        VideoViews = 48,
+        ViewThroughConversionsQualified = 48,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ViewThroughRate = 49,
+        ViewThroughRevenue = 49,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AverageCPV = 50,
+        VideoViews = 50,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        VideoViewsAt25Percent = 51,
+        ViewThroughRate = 51,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        VideoViewsAt50Percent = 52,
+        AverageCPV = 52,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        VideoViewsAt75Percent = 53,
+        VideoViewsAt25Percent = 53,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CompletedVideoViews = 54,
+        VideoViewsAt50Percent = 54,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        VideoCompletionRate = 55,
+        VideoViewsAt75Percent = 55,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        TotalWatchTimeInMS = 56,
+        CompletedVideoViews = 56,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AverageWatchTimePerVideoView = 57,
+        VideoCompletionRate = 57,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AverageWatchTimePerImpression = 58,
+        TotalWatchTimeInMS = 58,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AverageWatchTimePerVideoView = 59,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AverageWatchTimePerImpression = 60,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 61,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 62,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 63,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -13610,6 +13868,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         AllConversionsQualified = 48,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 49,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 50,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 51,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -14053,6 +14320,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ViewThroughRevenue = 60,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 61,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 62,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 63,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -14539,6 +14815,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         FeedLabel = 101,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 102,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 103,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 104,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -14976,6 +15261,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         AssetGroupStatus = 78,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 79,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 80,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 81,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -15382,6 +15676,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         AssetGroupStatus = 64,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 65,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 66,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 67,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -15770,6 +16073,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         AssetGroupName = 55,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 56,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 57,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 58,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -16164,6 +16476,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         AdGroupStatus = 14,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 15,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 16,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 17,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -16584,6 +16905,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         CPS = 79,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 80,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 81,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 82,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -16958,6 +17288,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Description = 57,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 58,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 59,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 60,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -17289,6 +17628,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GoalId = 56,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 57,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 58,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 59,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -17604,6 +17952,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ViewThroughRevenue = 52,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 53,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 54,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 55,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -18443,6 +18800,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         CostPerConversion = 19,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 20,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 21,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 22,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -18778,6 +19144,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         SearchVolume = 27,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 28,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 29,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 30,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -18853,6 +19228,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Revenue = 22,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 23,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 24,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 25,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -19292,6 +19676,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Conversions = 24,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 25,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 26,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 27,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -19533,6 +19926,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         RevenuePerAppInstall = 46,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 47,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 48,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 49,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -19687,6 +20089,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ViewThroughConversionRate = 37,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 38,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 39,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 40,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -19920,6 +20331,15 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Currency = 32,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 33,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 34,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 35,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -20019,7 +20439,7 @@ namespace Microsoft.BingAds.V13.Reporting
         Clicks = 18,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AverageCpc = 19,
+        Cpc = 19,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ConversionsQualified = 20,
@@ -20254,6 +20674,231 @@ namespace Microsoft.BingAds.V13.Reporting
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ConversionsQualified = 15,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MetroArea = 16,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SearchTermLandingPageReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v13")]
+    [System.SerializableAttribute()]
+    public partial class SearchTermLandingPageReportFilter : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<Microsoft.BingAds.V13.Reporting.AdTypeReportFilter> AdTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<Microsoft.BingAds.V13.Reporting.DeliveredMatchTypeReportFilter> DeliveredMatchTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<Microsoft.BingAds.V13.Reporting.LanguageReportFilter> LanguageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.IList<string> SearchQueriesField;
+        
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData
+        {
+            get
+            {
+                return this.extensionDataField;
+            }
+            set
+            {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<Microsoft.BingAds.V13.Reporting.AdTypeReportFilter> AdType
+        {
+            get
+            {
+                return this.AdTypeField;
+            }
+            set
+            {
+                if ((this.AdTypeField.Equals(value) != true))
+                {
+                    this.AdTypeField = value;
+                    this.RaisePropertyChanged("AdType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<Microsoft.BingAds.V13.Reporting.DeliveredMatchTypeReportFilter> DeliveredMatchType
+        {
+            get
+            {
+                return this.DeliveredMatchTypeField;
+            }
+            set
+            {
+                if ((this.DeliveredMatchTypeField.Equals(value) != true))
+                {
+                    this.DeliveredMatchTypeField = value;
+                    this.RaisePropertyChanged("DeliveredMatchType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<Microsoft.BingAds.V13.Reporting.LanguageReportFilter> Language
+        {
+            get
+            {
+                return this.LanguageField;
+            }
+            set
+            {
+                if ((this.LanguageField.Equals(value) != true))
+                {
+                    this.LanguageField = value;
+                    this.RaisePropertyChanged("Language");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.IList<string> SearchQueries
+        {
+            get
+            {
+                return this.SearchQueriesField;
+            }
+            set
+            {
+                if ((object.ReferenceEquals(this.SearchQueriesField, value) != true))
+                {
+                    this.SearchQueriesField = value;
+                    this.RaisePropertyChanged("SearchQueries");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SearchTermLandingPageReportColumn", Namespace="https://bingads.microsoft.com/Reporting/v13")]
+    public enum SearchTermLandingPageReportColumn : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountName = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountId = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignName = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignId = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupName = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupId = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdId = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdType = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignType = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Language = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SearchQuery = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Keyword = 11,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BidMatchType = 12,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DeliveredMatchType = 13,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Headline = 14,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FinalUrl = 16,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FinalUrlSource = 17,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Impressions = 18,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Clicks = 19,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Ctr = 20,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AverageCpc = 21,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Spend = 22,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Conversions = 23,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ConversionRate = 24,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CostPerConversion = 25,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AbsoluteTopImpressionRatePercent = 26,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TopImpressionRatePercent = 27,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Revenue = 28,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ReturnOnAdSpend = 29,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TimePeriod = 30,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ConversionsQualified = 31,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MarketingObjective = 32,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Channel = 33,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SubChannel = 34,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

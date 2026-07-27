@@ -57,9 +57,14 @@ namespace Microsoft.BingAds.V13.Internal.Bulk.Entities
 
         public static void AddConditionsFromRowValues(RowValues values, IList<WebpageCondition> conditions)
         {
-            var conditionHeaderPrefix = StringTable.DynamicAdTargetCondition1.Remove(StringTable.DynamicAdTargetCondition1.Length - 1);
-            var valueHeaderPrefix = StringTable.DynamicAdTargetValue1.Remove(StringTable.DynamicAdTargetValue1.Length - 1);
-            var conditionOperatorHeaderPrefix = StringTable.DynamicAdTargetConditionOperator1.Remove(StringTable.DynamicAdTargetConditionOperator1.Length - 1);
+            AddConditionsFromRowValues(values, conditions, StringTable.DynamicAdTargetCondition1, StringTable.DynamicAdTargetValue1, StringTable.DynamicAdTargetConditionOperator1);
+        }
+
+        public static void AddConditionsFromRowValues(RowValues values, IList<WebpageCondition> conditions, string conditionHeader1, string valueHeader1, string conditionOperatorHeader1)
+        {
+            var conditionHeaderPrefix = conditionHeader1.Remove(conditionHeader1.Length - 1);
+            var valueHeaderPrefix = valueHeader1.Remove(valueHeader1.Length - 1);
+            var conditionOperatorHeaderPrefix = conditionOperatorHeader1.Remove(conditionOperatorHeader1.Length - 1);
 
             for (int i = 1; i <= MaxNumberOfConditions; i++)
             {
@@ -89,9 +94,14 @@ namespace Microsoft.BingAds.V13.Internal.Bulk.Entities
 
         public static void AddRowValuesFromConditions(IList<WebpageCondition> conditions, RowValues rowValues)
         {
-            var conditionHeaderPrefix = StringTable.DynamicAdTargetCondition1.Remove(StringTable.DynamicAdTargetCondition1.Length - 1);
-            var valueHeaderPrefix = StringTable.DynamicAdTargetValue1.Remove(StringTable.DynamicAdTargetValue1.Length - 1);
-            var conditionOperatorHeaderPrefix = StringTable.DynamicAdTargetConditionOperator1.Remove(StringTable.DynamicAdTargetConditionOperator1.Length - 1);
+            AddRowValuesFromConditions(conditions, rowValues, StringTable.DynamicAdTargetCondition1, StringTable.DynamicAdTargetValue1, StringTable.DynamicAdTargetConditionOperator1);
+        }
+
+        public static void AddRowValuesFromConditions(IList<WebpageCondition> conditions, RowValues rowValues, string conditionHeader1, string valueHeader1, string conditionOperatorHeader1)
+        {
+            var conditionHeaderPrefix = conditionHeader1.Remove(conditionHeader1.Length - 1);
+            var valueHeaderPrefix = valueHeader1.Remove(valueHeader1.Length - 1);
+            var conditionOperatorHeaderPrefix = conditionOperatorHeader1.Remove(conditionOperatorHeader1.Length - 1);
 
             for (var i = 1; i <= conditions.Count; i++)
             {

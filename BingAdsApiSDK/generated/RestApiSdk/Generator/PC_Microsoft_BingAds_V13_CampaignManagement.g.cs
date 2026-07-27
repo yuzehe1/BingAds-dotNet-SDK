@@ -803,9 +803,8 @@ public static partial class RestApiGeneration
 
             return type switch
             {
-                "BiddableCampaignCriterion" => jsonObj.Deserialize<BiddableCampaignCriterion>(options),
                 "NegativeCampaignCriterion" => jsonObj.Deserialize<NegativeCampaignCriterion>(options),
-                "CampaignCriterion" => jsonObj.Deserialize<CampaignCriterion>(_originalOptions),
+                "BiddableCampaignCriterion" => jsonObj.Deserialize<BiddableCampaignCriterion>(options),
                 _ => throw new JsonException(null, _createUnsupportedTypeValueException($"Unsupported Type value '{type}'"))
             };
         }
@@ -816,14 +815,11 @@ public static partial class RestApiGeneration
 
             switch (value)
             {
-                case BiddableCampaignCriterion biddableCampaignCriterion:
-                    JsonSerializer.Serialize(writer, biddableCampaignCriterion, options);
-                    break;
                 case NegativeCampaignCriterion negativeCampaignCriterion:
                     JsonSerializer.Serialize(writer, negativeCampaignCriterion, options);
                     break;
-                case CampaignCriterion campaignCriterion:
-                    JsonSerializer.Serialize(writer, campaignCriterion, _originalOptions);
+                case BiddableCampaignCriterion biddableCampaignCriterion:
+                    JsonSerializer.Serialize(writer, biddableCampaignCriterion, options);
                     break;
                 default:
                     throw new InvalidOperationException($"Unknown type '{value.GetType().Name}'");
@@ -934,6 +930,7 @@ public static partial class RestApiGeneration
                 "GenreCriterion" => jsonObj.Deserialize<GenreCriterion>(options),
                 "DealCriterion" => jsonObj.Deserialize<DealCriterion>(options),
                 "StoreCriterion" => jsonObj.Deserialize<StoreCriterion>(options),
+                "CustomLinkedInCriterion" => jsonObj.Deserialize<CustomLinkedInCriterion>(options),
                 "ProfileCriterion" => jsonObj.Deserialize<ProfileCriterion>(options),
                 "AudienceCriterion" => jsonObj.Deserialize<AudienceCriterion>(options),
                 "LocationIntentCriterion" => jsonObj.Deserialize<LocationIntentCriterion>(options),
@@ -977,6 +974,9 @@ public static partial class RestApiGeneration
                     break;
                 case StoreCriterion storeCriterion:
                     JsonSerializer.Serialize(writer, storeCriterion, options);
+                    break;
+                case CustomLinkedInCriterion customLinkedInCriterion:
+                    JsonSerializer.Serialize(writer, customLinkedInCriterion, options);
                     break;
                 case ProfileCriterion profileCriterion:
                     JsonSerializer.Serialize(writer, profileCriterion, options);
@@ -1519,7 +1519,6 @@ public static partial class RestApiGeneration
 
             return type switch
             {
-                "ImpressionTrackingSetting" => jsonObj.Deserialize<ImpressionTrackingSetting>(options),
                 "NetworkDistributionSetting" => jsonObj.Deserialize<NetworkDistributionSetting>(options),
                 "AISearchSetting" => jsonObj.Deserialize<AISearchSetting>(options),
                 "BaseDomainSetting" => jsonObj.Deserialize<BaseDomainSetting>(options),
@@ -1549,9 +1548,6 @@ public static partial class RestApiGeneration
 
             switch (value)
             {
-                case ImpressionTrackingSetting impressionTrackingSetting:
-                    JsonSerializer.Serialize(writer, impressionTrackingSetting, options);
-                    break;
                 case NetworkDistributionSetting networkDistributionSetting:
                     JsonSerializer.Serialize(writer, networkDistributionSetting, options);
                     break;

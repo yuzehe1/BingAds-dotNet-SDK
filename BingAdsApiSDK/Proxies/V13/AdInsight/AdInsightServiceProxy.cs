@@ -15420,6 +15420,21 @@ namespace Microsoft.BingAds.V13.AdInsight
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/AdInsight/v13", Order=22)]
         public System.Nullable<bool> AutoTargeting;
         
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/AdInsight/v13", Order=23)]
+        public Microsoft.BingAds.V13.AdInsight.SelectionOflong JobSeniority;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/AdInsight/v13", Order=24)]
+        public Microsoft.BingAds.V13.AdInsight.SelectionOflong Genre;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/AdInsight/v13", Order=25)]
+        public Microsoft.BingAds.V13.AdInsight.SelectionOflong Channel;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/AdInsight/v13", Order=26)]
+        public Microsoft.BingAds.V13.AdInsight.SelectionOflong ChannelPlacement;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/AdInsight/v13", Order=27)]
+        public Microsoft.BingAds.V13.AdInsight.SelectionOflong SubChannel;
+        
         public GetAudienceFullEstimationRequest()
         {
         }
@@ -15454,7 +15469,12 @@ namespace Microsoft.BingAds.V13.AdInsight
                     System.Nullable<System.DateTime> EndDate, 
                     System.Nullable<decimal> TotalBudget, 
                     System.Nullable<bool> IncludeImpressionsBreakdown, 
-                    System.Nullable<bool> AutoTargeting)
+                    System.Nullable<bool> AutoTargeting, 
+                    Microsoft.BingAds.V13.AdInsight.SelectionOflong JobSeniority, 
+                    Microsoft.BingAds.V13.AdInsight.SelectionOflong Genre, 
+                    Microsoft.BingAds.V13.AdInsight.SelectionOflong Channel, 
+                    Microsoft.BingAds.V13.AdInsight.SelectionOflong ChannelPlacement, 
+                    Microsoft.BingAds.V13.AdInsight.SelectionOflong SubChannel)
         {
             this.ApplicationToken = ApplicationToken;
             this.AuthenticationToken = AuthenticationToken;
@@ -15486,6 +15506,11 @@ namespace Microsoft.BingAds.V13.AdInsight
             this.TotalBudget = TotalBudget;
             this.IncludeImpressionsBreakdown = IncludeImpressionsBreakdown;
             this.AutoTargeting = AutoTargeting;
+            this.JobSeniority = JobSeniority;
+            this.Genre = Genre;
+            this.Channel = Channel;
+            this.ChannelPlacement = ChannelPlacement;
+            this.SubChannel = SubChannel;
         }
     }
     
@@ -15697,6 +15722,21 @@ namespace Microsoft.BingAds.V13.AdInsight
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/AdInsight/v13", Order=16)]
         public System.Nullable<int> MultiAdTypes;
         
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/AdInsight/v13", Order=17)]
+        public Microsoft.BingAds.V13.AdInsight.SelectionOflong JobSeniority;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/AdInsight/v13", Order=18)]
+        public Microsoft.BingAds.V13.AdInsight.SelectionOflong Genre;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/AdInsight/v13", Order=19)]
+        public Microsoft.BingAds.V13.AdInsight.SelectionOflong Channel;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/AdInsight/v13", Order=20)]
+        public Microsoft.BingAds.V13.AdInsight.SelectionOflong ChannelPlacement;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/AdInsight/v13", Order=21)]
+        public Microsoft.BingAds.V13.AdInsight.SelectionOflong SubChannel;
+        
         public GetAudienceBreakdownRequest()
         {
         }
@@ -15725,7 +15765,12 @@ namespace Microsoft.BingAds.V13.AdInsight
                     Microsoft.BingAds.V13.AdInsight.Feed Feed, 
                     System.Nullable<int> Lcid, 
                     Microsoft.BingAds.V13.AdInsight.BreakdownCategory BreakdownReturnCategory, 
-                    System.Nullable<int> MultiAdTypes)
+                    System.Nullable<int> MultiAdTypes, 
+                    Microsoft.BingAds.V13.AdInsight.SelectionOflong JobSeniority, 
+                    Microsoft.BingAds.V13.AdInsight.SelectionOflong Genre, 
+                    Microsoft.BingAds.V13.AdInsight.SelectionOflong Channel, 
+                    Microsoft.BingAds.V13.AdInsight.SelectionOflong ChannelPlacement, 
+                    Microsoft.BingAds.V13.AdInsight.SelectionOflong SubChannel)
         {
             this.ApplicationToken = ApplicationToken;
             this.AuthenticationToken = AuthenticationToken;
@@ -15751,6 +15796,11 @@ namespace Microsoft.BingAds.V13.AdInsight
             this.Lcid = Lcid;
             this.BreakdownReturnCategory = BreakdownReturnCategory;
             this.MultiAdTypes = MultiAdTypes;
+            this.JobSeniority = JobSeniority;
+            this.Genre = Genre;
+            this.Channel = Channel;
+            this.ChannelPlacement = ChannelPlacement;
+            this.SubChannel = SubChannel;
         }
     }
     

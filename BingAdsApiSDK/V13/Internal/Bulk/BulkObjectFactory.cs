@@ -67,6 +67,7 @@ using BulkAdGroupAppAdExtension = Microsoft.BingAds.V13.Bulk.Entities.BulkAdGrou
 using BulkAdGroupCalloutAdExtension = Microsoft.BingAds.V13.Bulk.Entities.BulkAdGroupCalloutAdExtension;
 using BulkAdGroupCustomAudienceAssociation = Microsoft.BingAds.V13.Bulk.Entities.BulkAdGroupCustomAudienceAssociation;
 using BulkAdGroupDynamicSearchAdTarget = Microsoft.BingAds.V13.Bulk.Entities.BulkAdGroupDynamicSearchAdTarget;
+using BulkAdGroupUrlTarget = Microsoft.BingAds.V13.Bulk.Entities.BulkAdGroupUrlTarget;
 using BulkAdGroupImageAdExtension = Microsoft.BingAds.V13.Bulk.Entities.BulkAdGroupImageAdExtension;
 using BulkAdGroupInMarketAudienceAssociation = Microsoft.BingAds.V13.Bulk.Entities.BulkAdGroupInMarketAudienceAssociation;
 using BulkAdGroupNegativeCustomAudienceAssociation = Microsoft.BingAds.V13.Bulk.Entities.BulkAdGroupNegativeCustomAudienceAssociation;
@@ -301,6 +302,7 @@ namespace Microsoft.BingAds.V13.Internal.Bulk
 
                 {StringTable.DynamicSearchAd,               new EntityInfo(() => new BulkDynamicSearchAd())},
                 {StringTable.AdGroupDynamicSearchAdTarget,  new EntityInfo(() => new BulkAdGroupDynamicSearchAdTarget())},
+                {StringTable.AdGroupUrlTarget,  new EntityInfo(() => new BulkAdGroupUrlTarget())},
                 {StringTable.AdGroupNegativeDynamicSearchAdTarget, new EntityInfo(() => new BulkAdGroupNegativeDynamicSearchAdTarget())},
                 {StringTable.CampaignNegativeDynamicSearchAdTarget, new EntityInfo(() => new BulkCampaignNegativeDynamicSearchAdTarget())},
 
@@ -339,6 +341,7 @@ namespace Microsoft.BingAds.V13.Internal.Bulk
                 {StringTable.CampaignLocationIntentCriterion,  new EntityInfo(() => new BulkCampaignLocationIntentCriterion())},
                 {StringTable.CampaignNegativeAgeCriterion,  new EntityInfo(() => new BulkCampaignNegativeAgeCriterion())},
                 {StringTable.CampaignNegativeGenderCriterion,  new EntityInfo(() => new BulkCampaignNegativeGenderCriterion())},
+                {StringTable.CampaignNegativeDeviceCriterion,  new EntityInfo(() => new BulkCampaignNegativeDeviceCriterion())},
                 {StringTable.CampaignNegativeLocationCriterion,  new EntityInfo(() => new BulkCampaignNegativeLocationCriterion())},
                 {StringTable.CampaignRadiusCriterion,  new EntityInfo(() => new BulkCampaignRadiusCriterion())},
                 {StringTable.CampaignDealCriterion,  new EntityInfo(() => new BulkCampaignDealCriterion())},

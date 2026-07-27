@@ -116,9 +116,6 @@ namespace Microsoft.BingAds.V13.CampaignManagement
         private bool IsPoliticalField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MarketingObjectiveField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> MultimediaAdsBidAdjustmentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -414,23 +411,6 @@ namespace Microsoft.BingAds.V13.CampaignManagement
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string MarketingObjective
-        {
-            get
-            {
-                return this.MarketingObjectiveField;
-            }
-            set
-            {
-                if ((object.ReferenceEquals(this.MarketingObjectiveField, value) != true))
-                {
-                    this.MarketingObjectiveField = value;
-                    this.RaisePropertyChanged("MarketingObjective");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
         public System.Nullable<int> MultimediaAdsBidAdjustment
         {
             get
@@ -583,7 +563,7 @@ namespace Microsoft.BingAds.V13.CampaignManagement
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=24)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=23)]
         public System.Nullable<Microsoft.BingAds.V13.CampaignManagement.CampaignType> CampaignType
         {
             get
@@ -600,7 +580,7 @@ namespace Microsoft.BingAds.V13.CampaignManagement
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=25)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=24)]
         public System.Collections.Generic.IList<Microsoft.BingAds.V13.CampaignManagement.Setting> Settings
         {
             get
@@ -617,7 +597,7 @@ namespace Microsoft.BingAds.V13.CampaignManagement
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=26)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=25)]
         public System.Nullable<long> BudgetId
         {
             get
@@ -634,7 +614,7 @@ namespace Microsoft.BingAds.V13.CampaignManagement
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=27)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=26)]
         public System.Collections.Generic.IList<string> Languages
         {
             get
@@ -651,7 +631,7 @@ namespace Microsoft.BingAds.V13.CampaignManagement
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=28)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=27)]
         public System.Nullable<bool> AdScheduleUseSearcherTimeZone
         {
             get
@@ -668,7 +648,7 @@ namespace Microsoft.BingAds.V13.CampaignManagement
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=29)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=28)]
         public System.Nullable<long> BidStrategyId
         {
             get
@@ -898,9 +878,6 @@ namespace Microsoft.BingAds.V13.CampaignManagement
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         App = 128,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UnifiedCampaign = 1024,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -925,7 +902,6 @@ namespace Microsoft.BingAds.V13.CampaignManagement
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Microsoft.BingAds.V13.CampaignManagement.BaseDomainSetting))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Microsoft.BingAds.V13.CampaignManagement.AISearchSetting))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Microsoft.BingAds.V13.CampaignManagement.NetworkDistributionSetting))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Microsoft.BingAds.V13.CampaignManagement.ImpressionTrackingSetting))]
     public partial class Setting : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
     {
         
@@ -2480,6 +2456,9 @@ namespace Microsoft.BingAds.V13.CampaignManagement
         private System.Nullable<bool> FinalUrlExpansionOptOutField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.IList<long> PageFeedIdsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<bool> SearchTermMatchingOptOutField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -2550,6 +2529,23 @@ namespace Microsoft.BingAds.V13.CampaignManagement
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public System.Collections.Generic.IList<long> PageFeedIds
+        {
+            get
+            {
+                return this.PageFeedIdsField;
+            }
+            set
+            {
+                if ((object.ReferenceEquals(this.PageFeedIdsField, value) != true))
+                {
+                    this.PageFeedIdsField = value;
+                    this.RaisePropertyChanged("PageFeedIds");
+                }
+            }
+        }
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> SearchTermMatchingOptOut
         {
@@ -2591,34 +2587,6 @@ namespace Microsoft.BingAds.V13.CampaignManagement
                 {
                     this.NetworkOptionField = value;
                     this.RaisePropertyChanged("NetworkOption");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ImpressionTrackingSetting", Namespace="https://bingads.microsoft.com/CampaignManagement/v13")]
-    [System.SerializableAttribute()]
-    public partial class ImpressionTrackingSetting : Microsoft.BingAds.V13.CampaignManagement.Setting
-    {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ImpressionTrackingUrlField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string ImpressionTrackingUrl
-        {
-            get
-            {
-                return this.ImpressionTrackingUrlField;
-            }
-            set
-            {
-                if ((object.ReferenceEquals(this.ImpressionTrackingUrlField, value) != true))
-                {
-                    this.ImpressionTrackingUrlField = value;
-                    this.RaisePropertyChanged("ImpressionTrackingUrl");
                 }
             }
         }
@@ -3718,10 +3686,7 @@ namespace Microsoft.BingAds.V13.CampaignManagement
         NetworkDistributionSetting = 68719476736,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MarketingObjective = 137438953472,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ImpressionTrackingSetting = 274877906944,
+        PageFeedInAISearchSettings = 137438953472,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -14577,6 +14542,7 @@ namespace Microsoft.BingAds.V13.CampaignManagement
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Microsoft.BingAds.V13.CampaignManagement.LocationIntentCriterion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Microsoft.BingAds.V13.CampaignManagement.AudienceCriterion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Microsoft.BingAds.V13.CampaignManagement.ProfileCriterion))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Microsoft.BingAds.V13.CampaignManagement.CustomLinkedInCriterion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Microsoft.BingAds.V13.CampaignManagement.StoreCriterion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Microsoft.BingAds.V13.CampaignManagement.DealCriterion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Microsoft.BingAds.V13.CampaignManagement.GenreCriterion))]
@@ -15749,6 +15715,74 @@ namespace Microsoft.BingAds.V13.CampaignManagement
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Microsoft.BingAds.V13.CampaignManagement.ProfileType ProfileTypeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long ProfileId
+        {
+            get
+            {
+                return this.ProfileIdField;
+            }
+            set
+            {
+                if ((this.ProfileIdField.Equals(value) != true))
+                {
+                    this.ProfileIdField = value;
+                    this.RaisePropertyChanged("ProfileId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Microsoft.BingAds.V13.CampaignManagement.ProfileType ProfileType
+        {
+            get
+            {
+                return this.ProfileTypeField;
+            }
+            set
+            {
+                if ((this.ProfileTypeField.Equals(value) != true))
+                {
+                    this.ProfileTypeField = value;
+                    this.RaisePropertyChanged("ProfileType");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomLinkedInCriterion", Namespace="https://bingads.microsoft.com/CampaignManagement/v13")]
+    [System.SerializableAttribute()]
+    public partial class CustomLinkedInCriterion : Microsoft.BingAds.V13.CampaignManagement.Criterion
+    {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProfileField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long ProfileIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Microsoft.BingAds.V13.CampaignManagement.ProfileType ProfileTypeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Profile
+        {
+            get
+            {
+                return this.ProfileField;
+            }
+            set
+            {
+                if ((object.ReferenceEquals(this.ProfileField, value) != true))
+                {
+                    this.ProfileField = value;
+                    this.RaisePropertyChanged("Profile");
+                }
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public long ProfileId
@@ -18073,8 +18107,8 @@ namespace Microsoft.BingAds.V13.CampaignManagement
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CampaignCriterion", Namespace="https://bingads.microsoft.com/CampaignManagement/v13")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Microsoft.BingAds.V13.CampaignManagement.NegativeCampaignCriterion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Microsoft.BingAds.V13.CampaignManagement.BiddableCampaignCriterion))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Microsoft.BingAds.V13.CampaignManagement.NegativeCampaignCriterion))]
     public partial class CampaignCriterion : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
     {
         
@@ -18226,14 +18260,6 @@ namespace Microsoft.BingAds.V13.CampaignManagement
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="NegativeCampaignCriterion", Namespace="https://bingads.microsoft.com/CampaignManagement/v13")]
-    [System.SerializableAttribute()]
-    public partial class NegativeCampaignCriterion : Microsoft.BingAds.V13.CampaignManagement.CampaignCriterion
-    {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="BiddableCampaignCriterion", Namespace="https://bingads.microsoft.com/CampaignManagement/v13")]
     [System.SerializableAttribute()]
     public partial class BiddableCampaignCriterion : Microsoft.BingAds.V13.CampaignManagement.CampaignCriterion
@@ -18278,6 +18304,14 @@ namespace Microsoft.BingAds.V13.CampaignManagement
                 }
             }
         }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="NegativeCampaignCriterion", Namespace="https://bingads.microsoft.com/CampaignManagement/v13")]
+    [System.SerializableAttribute()]
+    public partial class NegativeCampaignCriterion : Microsoft.BingAds.V13.CampaignManagement.CampaignCriterion
+    {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -26105,6 +26139,9 @@ namespace Microsoft.BingAds.V13.CampaignManagement
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Collections.Generic.IList<Microsoft.BingAds.V13.CampaignManagement.CampaignAdGroupIds> CampaignAdGroupIdsField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.IList<string> CampaignTypesField;
+        
         private string CredentialIdField;
         
         private System.Nullable<long> GoogleAccountIdField;
@@ -26125,6 +26162,23 @@ namespace Microsoft.BingAds.V13.CampaignManagement
                 {
                     this.CampaignAdGroupIdsField = value;
                     this.RaisePropertyChanged("CampaignAdGroupIds");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public System.Collections.Generic.IList<string> CampaignTypes
+        {
+            get
+            {
+                return this.CampaignTypesField;
+            }
+            set
+            {
+                if ((object.ReferenceEquals(this.CampaignTypesField, value) != true))
+                {
+                    this.CampaignTypesField = value;
+                    this.RaisePropertyChanged("CampaignTypes");
                 }
             }
         }
@@ -26301,6 +26355,9 @@ namespace Microsoft.BingAds.V13.CampaignManagement
         private System.Nullable<bool> NewAudienceTargetsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> NewBrandListAssociationsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<bool> NewBrandSuitabilityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -26380,6 +26437,9 @@ namespace Microsoft.BingAds.V13.CampaignManagement
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<bool> NewReviewAdExtensionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> NewSearchThemesForExistingAssetGroupsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<bool> NewSitelinkAdExtensionsField;
@@ -26469,6 +26529,9 @@ namespace Microsoft.BingAds.V13.CampaignManagement
         private System.Nullable<bool> UpdateAssetAutomationCampaignSettingField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> UpdateAssetGroupsAssetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<bool> UpdateAudienceTargetsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -26476,6 +26539,9 @@ namespace Microsoft.BingAds.V13.CampaignManagement
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<bool> UpdateBidsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> UpdateBrandListAssociationsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<bool> UpdateBrandSuitabilityField;
@@ -26951,6 +27017,23 @@ namespace Microsoft.BingAds.V13.CampaignManagement
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public System.Nullable<bool> NewBrandListAssociations
+        {
+            get
+            {
+                return this.NewBrandListAssociationsField;
+            }
+            set
+            {
+                if ((this.NewBrandListAssociationsField.Equals(value) != true))
+                {
+                    this.NewBrandListAssociationsField = value;
+                    this.RaisePropertyChanged("NewBrandListAssociations");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
         public System.Nullable<bool> NewBrandSuitability
         {
             get
@@ -27405,6 +27488,23 @@ namespace Microsoft.BingAds.V13.CampaignManagement
                 {
                     this.NewReviewAdExtensionsField = value;
                     this.RaisePropertyChanged("NewReviewAdExtensions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public System.Nullable<bool> NewSearchThemesForExistingAssetGroups
+        {
+            get
+            {
+                return this.NewSearchThemesForExistingAssetGroupsField;
+            }
+            set
+            {
+                if ((this.NewSearchThemesForExistingAssetGroupsField.Equals(value) != true))
+                {
+                    this.NewSearchThemesForExistingAssetGroupsField = value;
+                    this.RaisePropertyChanged("NewSearchThemesForExistingAssetGroups");
                 }
             }
         }
@@ -27902,6 +28002,23 @@ namespace Microsoft.BingAds.V13.CampaignManagement
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public System.Nullable<bool> UpdateAssetGroupsAsset
+        {
+            get
+            {
+                return this.UpdateAssetGroupsAssetField;
+            }
+            set
+            {
+                if ((this.UpdateAssetGroupsAssetField.Equals(value) != true))
+                {
+                    this.UpdateAssetGroupsAssetField = value;
+                    this.RaisePropertyChanged("UpdateAssetGroupsAsset");
+                }
+            }
+        }
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> UpdateAudienceTargets
         {
@@ -27949,6 +28066,23 @@ namespace Microsoft.BingAds.V13.CampaignManagement
                 {
                     this.UpdateBidsField = value;
                     this.RaisePropertyChanged("UpdateBids");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public System.Nullable<bool> UpdateBrandListAssociations
+        {
+            get
+            {
+                return this.UpdateBrandListAssociationsField;
+            }
+            set
+            {
+                if ((this.UpdateBrandListAssociationsField.Equals(value) != true))
+                {
+                    this.UpdateBrandListAssociationsField = value;
+                    this.RaisePropertyChanged("UpdateBrandListAssociations");
                 }
             }
         }
@@ -28793,6 +28927,21 @@ namespace Microsoft.BingAds.V13.CampaignManagement
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ImportNCAGoalWithSystemGeneratedAudience = 2147483648,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UpdateAssetGroupsAsset = 4294967296,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NewBrandListAssociations = 8589934592,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UpdateBrandListAssociations = 17179869184,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignTypes = 34359738368,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NewSearchThemesForExistingAssetGroups = 68719476736,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -34856,6 +35005,9 @@ namespace Microsoft.BingAds.V13.CampaignManagement
         private bool EnableCacheField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool EnablePilotField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string LastCheckTimeUTCField;
         
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
@@ -34883,6 +35035,23 @@ namespace Microsoft.BingAds.V13.CampaignManagement
                 {
                     this.EnableCacheField = value;
                     this.RaisePropertyChanged("EnableCache");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public bool EnablePilot
+        {
+            get
+            {
+                return this.EnablePilotField;
+            }
+            set
+            {
+                if ((this.EnablePilotField.Equals(value) != true))
+                {
+                    this.EnablePilotField = value;
+                    this.RaisePropertyChanged("EnablePilot");
                 }
             }
         }
@@ -39869,7 +40038,7 @@ namespace Microsoft.BingAds.V13.CampaignManagement
         public string UserName;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/CampaignManagement/v13", Order=0)]
-        public long AdGroupId;
+        public System.Nullable<long> AdGroupId;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/CampaignManagement/v13", Order=1)]
         public System.Collections.Generic.IList<Microsoft.BingAds.V13.CampaignManagement.Keyword> Keywords;
@@ -39877,11 +40046,14 @@ namespace Microsoft.BingAds.V13.CampaignManagement
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/CampaignManagement/v13", Order=2)]
         public System.Nullable<bool> ReturnInheritedBidStrategyTypes;
         
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/CampaignManagement/v13", Order=3)]
+        public System.Nullable<long> AssetGroupId;
+        
         public AddKeywordsRequest()
         {
         }
         
-        public AddKeywordsRequest(string ApplicationToken, string AuthenticationToken, string CustomerAccountId, string CustomerId, string DeveloperToken, string Password, string UserName, long AdGroupId, System.Collections.Generic.IList<Microsoft.BingAds.V13.CampaignManagement.Keyword> Keywords, System.Nullable<bool> ReturnInheritedBidStrategyTypes)
+        public AddKeywordsRequest(string ApplicationToken, string AuthenticationToken, string CustomerAccountId, string CustomerId, string DeveloperToken, string Password, string UserName, System.Nullable<long> AdGroupId, System.Collections.Generic.IList<Microsoft.BingAds.V13.CampaignManagement.Keyword> Keywords, System.Nullable<bool> ReturnInheritedBidStrategyTypes, System.Nullable<long> AssetGroupId)
         {
             this.ApplicationToken = ApplicationToken;
             this.AuthenticationToken = AuthenticationToken;
@@ -39893,6 +40065,7 @@ namespace Microsoft.BingAds.V13.CampaignManagement
             this.AdGroupId = AdGroupId;
             this.Keywords = Keywords;
             this.ReturnInheritedBidStrategyTypes = ReturnInheritedBidStrategyTypes;
+            this.AssetGroupId = AssetGroupId;
         }
     }
     

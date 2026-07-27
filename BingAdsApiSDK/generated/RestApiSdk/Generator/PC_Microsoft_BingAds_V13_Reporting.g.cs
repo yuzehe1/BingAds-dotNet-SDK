@@ -148,6 +148,7 @@ public static partial class RestApiGeneration
 
             return type switch
             {
+                "SearchTermLandingPageReportRequest" => jsonObj.Deserialize<SearchTermLandingPageReportRequest>(options),
                 "MMMPerformanceReportRequest" => jsonObj.Deserialize<MMMPerformanceReportRequest>(options),
                 "MSClickIdPerformanceReportRequest" => jsonObj.Deserialize<MSClickIdPerformanceReportRequest>(options),
                 "BidStrategyReportRequest" => jsonObj.Deserialize<BidStrategyReportRequest>(options),
@@ -206,6 +207,9 @@ public static partial class RestApiGeneration
 
             switch (value)
             {
+                case SearchTermLandingPageReportRequest searchTermLandingPageReportRequest:
+                    JsonSerializer.Serialize(writer, searchTermLandingPageReportRequest, options);
+                    break;
                 case MMMPerformanceReportRequest mMMPerformanceReportRequest:
                     JsonSerializer.Serialize(writer, mMMPerformanceReportRequest, options);
                     break;
