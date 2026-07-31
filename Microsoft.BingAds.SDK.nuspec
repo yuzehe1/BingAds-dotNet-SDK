@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>Microsoft.BingAds.SDK</id>
-        <version>13.0.28</version>
+        <version>13.0.29</version>
         <title>Bing Ads SDK</title>
         <authors>Microsoft</authors>
         <owners>Microsoft</owners>
@@ -14,15 +14,12 @@
         <summary />
         <releaseNotes>API Updates:
 * Update Bing Ads API Version 13 service proxies to reflect recent interface changes. For details please see the [Bing Ads API Release Notes](https://learn.microsoft.com/en-us/advertising/guides/release-notes?view=bingads-13).
-* New setting AISearchSetting in CampaignSetting.
-* New API in Campaign Management Service: GetUetTagAuthKey.
-* New APIs in Customer Billing Service: GetBillingGroups, GetUngroupedAccounts and UpdateBillingGroupAccounts
-* New report: MSClickIdPerformanceReport.
+* New criterion type in Campaign Management Service: CustomLinkedInCriterion (LinkedIn segment targeting).
+* New report in Reporting Service: SearchTermLandingPageReport.
 
 Bulk Mapping Updates:
-* Add AISearchSetting in BulkCampaign mapping.
-* Add BaseDomainSetting in BulkAdGroup mapping.
-* Add bulk mappings: BulkAppDownloadGoal, BulkCampaignNegativeAgeCriterion, BulkCampaignNegativeGenderCriterion, BulkAccountContentNegativeKeywordList, BulkAccountContentNegativeKeywordListAssociation and BulkAccountContentSharedNegativeKeyword.</releaseNotes>
+* Add DownloadEntity.AssetGroupNegativeKeywords.
+* Add bulk mappings: BulkAdGroupUrlTarget and BulkCampaignNegativeDeviceCriterion.</releaseNotes>
         <copyright>© Microsoft Corporation. All rights reserved.</copyright>
         <frameworkAssemblies>
             <frameworkAssembly assemblyName="System.ServiceModel" targetFramework="" />
