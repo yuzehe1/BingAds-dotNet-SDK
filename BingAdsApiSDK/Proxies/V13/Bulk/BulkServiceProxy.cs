@@ -695,6 +695,9 @@ namespace Microsoft.BingAds.V13.Bulk
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         AccountContentNegativeKeyword = 200,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AssetGroupNegativeKeywords = 201,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]

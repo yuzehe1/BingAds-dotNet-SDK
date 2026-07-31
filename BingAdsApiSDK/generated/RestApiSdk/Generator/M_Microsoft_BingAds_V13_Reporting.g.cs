@@ -199,6 +199,8 @@ public static partial class RestApiGeneration
             { typeof(SearchInsightPerformanceReportRequest), static t => CustomizeSearchInsightPerformanceReportRequest(t) },
             { typeof(SearchQueryPerformanceReportFilter), static t => CustomizeSearchQueryPerformanceReportFilter(t) },
             { typeof(SearchQueryPerformanceReportRequest), static t => CustomizeSearchQueryPerformanceReportRequest(t) },
+            { typeof(SearchTermLandingPageReportFilter), static t => CustomizeSearchTermLandingPageReportFilter(t) },
+            { typeof(SearchTermLandingPageReportRequest), static t => CustomizeSearchTermLandingPageReportRequest(t) },
             { typeof(ShareOfVoiceReportFilter), static t => CustomizeShareOfVoiceReportFilter(t) },
             { typeof(ShareOfVoiceReportRequest), static t => CustomizeShareOfVoiceReportRequest(t) },
             { typeof(SubmitGenerateReportRequest), static t => CustomizeSubmitGenerateReportRequest(t) },
@@ -1859,6 +1861,37 @@ public static partial class RestApiGeneration
             }
             var newJsonPropertyInfo = jsonTypeInfo.CreateJsonPropertyInfo(typeof(string), "Type");
             newJsonPropertyInfo.Get = _ => "SearchQueryPerformanceReportRequest";
+            jsonTypeInfo.Properties.Add(newJsonPropertyInfo);
+        }
+
+        private static void CustomizeSearchTermLandingPageReportFilter(JsonTypeInfo jsonTypeInfo)
+        {
+            for (int i = jsonTypeInfo.Properties.Count - 1; i >= 0; i--)
+            {
+                var jsonPropertyInfo = jsonTypeInfo.Properties[i];
+                switch (jsonPropertyInfo.Name)
+                {
+                    case "ExtensionData":
+                        jsonTypeInfo.Properties.RemoveAt(i);
+                        break;
+                }
+            }
+        }
+
+        private static void CustomizeSearchTermLandingPageReportRequest(JsonTypeInfo jsonTypeInfo)
+        {
+            for (int i = jsonTypeInfo.Properties.Count - 1; i >= 0; i--)
+            {
+                var jsonPropertyInfo = jsonTypeInfo.Properties[i];
+                switch (jsonPropertyInfo.Name)
+                {
+                    case "ExtensionData":
+                        jsonTypeInfo.Properties.RemoveAt(i);
+                        break;
+                }
+            }
+            var newJsonPropertyInfo = jsonTypeInfo.CreateJsonPropertyInfo(typeof(string), "Type");
+            newJsonPropertyInfo.Get = _ => "SearchTermLandingPageReportRequest";
             jsonTypeInfo.Properties.Add(newJsonPropertyInfo);
         }
 

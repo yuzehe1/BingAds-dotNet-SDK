@@ -47,60 +47,82 @@
 //  fitness for a particular purpose and non-infringement.
 //=====================================================================================================================================================
 
-using Microsoft.BingAds.Internal;
-using System;
+using Microsoft.BingAds.V13.CampaignManagement;
+using Microsoft.BingAds.V13.Internal.Bulk;
+using Microsoft.BingAds.V13.Internal.Bulk.Entities;
+using Microsoft.BingAds.V13.Internal.Bulk.Mappings;
 
-namespace Microsoft.BingAds
+namespace Microsoft.BingAds.V13.Bulk.Entities
 {
     /// <summary>
-    /// Represents a user who intends to access the corresponding customer and account.
-    /// An instance of this class is required to authenticate with Bing Ads if you are using either
-    /// <see cref="ServiceClient{TService}"/>.
+    /// <para>
+    /// This class exposes the <see cref="NegativeCampaignCriterion"/> property with DeviceCriterion that can be read and written as fields of the Campaign Negative Device Criterion record in a bulk file.
+    /// </para>
+    /// <para>For more information, see <see href="https://go.microsoft.com/fwlink/?linkid=846127">Campaign Negative Device Criterion</see>. </para>
     /// </summary>
-    public class AuthorizationData
+    /// <seealso cref="BulkServiceManager"/>
+    /// <seealso cref="BulkOperation{TStatus}"/>
+    /// <seealso cref="BulkFileReader"/>
+    /// <seealso cref="BulkFileWriter"/>
+    public class BulkCampaignNegativeDeviceCriterion : BulkCampaignNegativeCriterion
     {
-        /// <summary>
-        /// An object representing the authentication method that should be used in calls to the Bing Ads web services.
-        /// </summary>
-        /// <seealso cref="OAuthDesktopMobileAuthCodeGrant"/>
-        /// <seealso cref="OAuthDesktopMobileImplicitGrant"/>
-        /// <seealso cref="OAuthWebAuthCodeGrant"/>
-        /// <seealso cref="PasswordAuthentication"/>
-        public Authentication Authentication { get; set; }
-
-        /// <summary>
-        /// The identifier of the account that owns the entities in the request. Used as the CustomerAccountId header and the AccountId body elements in calls to the Bing Ads web services.
-        /// </summary>
-        public long AccountId { get; set; }
-
-        /// <summary>
-        /// The identifier of the customer that owns the account. Used as the CustomerId header element in calls to the Bing Ads web services.
-        /// </summary>
-        public long CustomerId { get; set; }
-
-        /// <summary>
-        /// The Bing Ads developer access token. Used as the DeveloperToken header element in calls to the Bing Ads web services.
-        /// </summary>
-        public string DeveloperToken { get; set; }
-
-        /// <summary>
-        /// The revision date this SDK was built against, sent as the Api-Revision HTTP header on every outgoing
-        /// request. Update in the same PR that bumps the SDK version. Customers who want to pin to a different
-        /// revision must call the API over raw HTTP (no generated SDK proxy) and set the header themselves.
-        /// </summary>
-        public static readonly string SdkApiRevision = "2026-05-20";
-
-        internal void Validate()
+        private static readonly IBulkMapping<BulkCampaignNegativeDeviceCriterion>[] Mappings =
         {
-            if (Authentication == null)
-            {
-                throw new InvalidOperationException(ErrorMessages.UserDataAuthenticationIsNull);
-            }
+            new SimpleBulkMapping<BulkCampaignNegativeDeviceCriterion>(StringTable.Target,
+                c =>
+                {
+                    var deviceCriterion = c.NegativeCampaignCriterion.Criterion as DeviceCriterion;
 
-            if (DeveloperToken == null)
+                    return deviceCriterion?.DeviceName;
+                },
+                (v, c) =>
+                {
+                    var deviceCriterion = c.NegativeCampaignCriterion.Criterion as DeviceCriterion;
+
+                    if (deviceCriterion != null)
+                    {
+                        deviceCriterion.DeviceName = v;
+                    }
+                }
+            ),
+
+            new SimpleBulkMapping<BulkCampaignNegativeDeviceCriterion>(StringTable.OsNames,
+                c =>
+                {
+                    var deviceCriterion = c.NegativeCampaignCriterion.Criterion as DeviceCriterion;
+
+                    return deviceCriterion?.OSName;
+                },
+                (v, c) =>
+                {
+                    var deviceCriterion = c.NegativeCampaignCriterion.Criterion as DeviceCriterion;
+
+                    if (deviceCriterion != null)
+                    {
+                        deviceCriterion.OSName = v;
+                    }
+                }
+            ),
+        };
+
+        internal override void ProcessMappingsToRowValues(RowValues values, bool excludeReadonlyData)
+        {
+            base.ProcessMappingsToRowValues(values, excludeReadonlyData);
+            this.ConvertToValues(values, Mappings);
+        }
+
+        internal override void ProcessMappingsFromRowValues(RowValues values)
+        {
+            base.ProcessMappingsFromRowValues(values);
+            values.ConvertToEntity(this, Mappings);
+        }
+
+        protected override Criterion CreateCriterion()
+        {
+            return new DeviceCriterion()
             {
-                throw new InvalidOperationException(ErrorMessages.UserDataDeveloperTokenIsNull);
-            }
+                Type = typeof(DeviceCriterion).Name,
+            };
         }
     }
 }

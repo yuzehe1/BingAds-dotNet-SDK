@@ -266,7 +266,6 @@ public static partial class RestApiGeneration
             { typeof(CampaignAdGroupIds), static t => CustomizeCampaignAdGroupIds(t) },
             { typeof(CampaignAssociation), static t => CustomizeCampaignAssociation(t) },
             { typeof(CampaignConversionGoal), static t => CustomizeCampaignConversionGoal(t) },
-            { typeof(CampaignCriterion), static t => CustomizeCampaignCriterion(t) },
             { typeof(CampaignNegativeSites), static t => CustomizeCampaignNegativeSites(t) },
             { typeof(CampaignSize), static t => CustomizeCampaignSize(t) },
             { typeof(CashbackAdjustment), static t => CustomizeCashbackAdjustment(t) },
@@ -301,6 +300,7 @@ public static partial class RestApiGeneration
             { typeof(CustomerListUserData), static t => CustomizeCustomerListUserData(t) },
             { typeof(CustomerShare), static t => CustomizeCustomerShare(t) },
             { typeof(CustomEventsRule), static t => CustomizeCustomEventsRule(t) },
+            { typeof(CustomLinkedInCriterion), static t => CustomizeCustomLinkedInCriterion(t) },
             { typeof(CustomParameter), static t => CustomizeCustomParameter(t) },
             { typeof(CustomParameters), static t => CustomizeCustomParameters(t) },
             { typeof(CustomSegment), static t => CustomizeCustomSegment(t) },
@@ -597,7 +597,6 @@ public static partial class RestApiGeneration
             { typeof(ImportResult), static t => CustomizeImportResult(t) },
             { typeof(ImportSearchAndReplaceForStringProperty), static t => CustomizeImportSearchAndReplaceForStringProperty(t) },
             { typeof(ImpressionBasedRemarketingList), static t => CustomizeImpressionBasedRemarketingList(t) },
-            { typeof(ImpressionTrackingSetting), static t => CustomizeImpressionTrackingSetting(t) },
             { typeof(InheritFromParentBiddingScheme), static t => CustomizeInheritFromParentBiddingScheme(t) },
             { typeof(InMarketAudience), static t => CustomizeInMarketAudience(t) },
             { typeof(InStoreTransactionGoal), static t => CustomizeInStoreTransactionGoal(t) },
@@ -2508,6 +2507,10 @@ public static partial class RestApiGeneration
                 var jsonPropertyInfo = jsonTypeInfo.Properties[i];
                 switch (jsonPropertyInfo.Name)
                 {
+                    case "PageFeedIds":
+                        jsonPropertyInfo.ShouldSerialize = (_, value) => value != null;
+                        jsonPropertyInfo.IsRequired = false;
+                        break;
                     case "Type":
                         jsonPropertyInfo.Get = _ => "AISearchSetting";
                         break;
@@ -3951,10 +3954,6 @@ public static partial class RestApiGeneration
                         jsonPropertyInfo.ShouldSerialize = (_, value) => !EqualityComparer<bool>.Default.Equals(default, (bool)value);
                         jsonPropertyInfo.IsRequired = false;
                         break;
-                    case "MarketingObjective":
-                        jsonPropertyInfo.ShouldSerialize = (_, value) => value != null;
-                        jsonPropertyInfo.IsRequired = false;
-                        break;
                     case "MultimediaAdsBidAdjustment":
                         jsonPropertyInfo.ShouldSerialize = (_, value) => value != null;
                         jsonPropertyInfo.IsRequired = false;
@@ -4027,30 +4026,6 @@ public static partial class RestApiGeneration
                 {
                     case "ExtensionData":
                         jsonTypeInfo.Properties.RemoveAt(i);
-                        break;
-                }
-            }
-        }
-
-        private static void CustomizeCampaignCriterion(JsonTypeInfo jsonTypeInfo)
-        {
-            for (int i = jsonTypeInfo.Properties.Count - 1; i >= 0; i--)
-            {
-                var jsonPropertyInfo = jsonTypeInfo.Properties[i];
-                switch (jsonPropertyInfo.Name)
-                {
-                    case "ExtensionData":
-                        jsonTypeInfo.Properties.RemoveAt(i);
-                        break;
-                }
-            }
-            for (int i = jsonTypeInfo.Properties.Count - 1; i >= 0; i--)
-            {
-                var jsonPropertyInfo = jsonTypeInfo.Properties[i];
-                switch (jsonPropertyInfo.Name)
-                {
-                    case "Type":
-                        jsonPropertyInfo.Get = _ => "CampaignCriterion";
                         break;
                 }
             }
@@ -4709,6 +4684,30 @@ public static partial class RestApiGeneration
                 {
                     case "Type":
                         jsonPropertyInfo.Get = _ => "CustomEvents";
+                        break;
+                }
+            }
+        }
+
+        private static void CustomizeCustomLinkedInCriterion(JsonTypeInfo jsonTypeInfo)
+        {
+            for (int i = jsonTypeInfo.Properties.Count - 1; i >= 0; i--)
+            {
+                var jsonPropertyInfo = jsonTypeInfo.Properties[i];
+                switch (jsonPropertyInfo.Name)
+                {
+                    case "ExtensionData":
+                        jsonTypeInfo.Properties.RemoveAt(i);
+                        break;
+                }
+            }
+            for (int i = jsonTypeInfo.Properties.Count - 1; i >= 0; i--)
+            {
+                var jsonPropertyInfo = jsonTypeInfo.Properties[i];
+                switch (jsonPropertyInfo.Name)
+                {
+                    case "Type":
+                        jsonPropertyInfo.Get = _ => "CustomLinkedInCriterion";
                         break;
                 }
             }
@@ -5993,6 +5992,17 @@ public static partial class RestApiGeneration
                 {
                     case "ExtensionData":
                         jsonTypeInfo.Properties.RemoveAt(i);
+                        break;
+                }
+            }
+            for (int i = jsonTypeInfo.Properties.Count - 1; i >= 0; i--)
+            {
+                var jsonPropertyInfo = jsonTypeInfo.Properties[i];
+                switch (jsonPropertyInfo.Name)
+                {
+                    case "EnablePilot":
+                        jsonPropertyInfo.ShouldSerialize = (_, value) => !EqualityComparer<bool>.Default.Equals(default, (bool)value);
+                        jsonPropertyInfo.IsRequired = false;
                         break;
                 }
             }
@@ -9407,6 +9417,10 @@ public static partial class RestApiGeneration
                 var jsonPropertyInfo = jsonTypeInfo.Properties[i];
                 switch (jsonPropertyInfo.Name)
                 {
+                    case "CampaignTypes":
+                        jsonPropertyInfo.ShouldSerialize = (_, value) => value != null;
+                        jsonPropertyInfo.IsRequired = false;
+                        break;
                     case "NotificationEmail":
                         jsonPropertyInfo.ShouldSerialize = (_, value) => value != null;
                         jsonPropertyInfo.IsRequired = false;
@@ -9463,6 +9477,10 @@ public static partial class RestApiGeneration
                         jsonPropertyInfo.ShouldSerialize = (_, value) => value != null;
                         jsonPropertyInfo.IsRequired = false;
                         break;
+                    case "NewBrandListAssociations":
+                        jsonPropertyInfo.ShouldSerialize = (_, value) => value != null;
+                        jsonPropertyInfo.IsRequired = false;
+                        break;
                     case "NewBrandSuitability":
                         jsonPropertyInfo.ShouldSerialize = (_, value) => value != null;
                         jsonPropertyInfo.IsRequired = false;
@@ -9488,6 +9506,10 @@ public static partial class RestApiGeneration
                         jsonPropertyInfo.IsRequired = false;
                         break;
                     case "NewPortfolioBidStrategy":
+                        jsonPropertyInfo.ShouldSerialize = (_, value) => value != null;
+                        jsonPropertyInfo.IsRequired = false;
+                        break;
+                    case "NewSearchThemesForExistingAssetGroups":
                         jsonPropertyInfo.ShouldSerialize = (_, value) => value != null;
                         jsonPropertyInfo.IsRequired = false;
                         break;
@@ -9528,6 +9550,14 @@ public static partial class RestApiGeneration
                         jsonPropertyInfo.IsRequired = false;
                         break;
                     case "UpdateAssetAutomationCampaignSetting":
+                        jsonPropertyInfo.ShouldSerialize = (_, value) => value != null;
+                        jsonPropertyInfo.IsRequired = false;
+                        break;
+                    case "UpdateAssetGroupsAsset":
+                        jsonPropertyInfo.ShouldSerialize = (_, value) => value != null;
+                        jsonPropertyInfo.IsRequired = false;
+                        break;
+                    case "UpdateBrandListAssociations":
                         jsonPropertyInfo.ShouldSerialize = (_, value) => value != null;
                         jsonPropertyInfo.IsRequired = false;
                         break;
@@ -10147,34 +10177,6 @@ public static partial class RestApiGeneration
                         break;
                     case "Type":
                         jsonPropertyInfo.Get = _ => AudienceType.ImpressionBasedRemarketingList;
-                        break;
-                }
-            }
-        }
-
-        private static void CustomizeImpressionTrackingSetting(JsonTypeInfo jsonTypeInfo)
-        {
-            for (int i = jsonTypeInfo.Properties.Count - 1; i >= 0; i--)
-            {
-                var jsonPropertyInfo = jsonTypeInfo.Properties[i];
-                switch (jsonPropertyInfo.Name)
-                {
-                    case "ExtensionData":
-                        jsonTypeInfo.Properties.RemoveAt(i);
-                        break;
-                }
-            }
-            for (int i = jsonTypeInfo.Properties.Count - 1; i >= 0; i--)
-            {
-                var jsonPropertyInfo = jsonTypeInfo.Properties[i];
-                switch (jsonPropertyInfo.Name)
-                {
-                    case "ImpressionTrackingUrl":
-                        jsonPropertyInfo.ShouldSerialize = (_, value) => value != null;
-                        jsonPropertyInfo.IsRequired = false;
-                        break;
-                    case "Type":
-                        jsonPropertyInfo.Get = _ => "ImpressionTrackingSetting";
                         break;
                 }
             }

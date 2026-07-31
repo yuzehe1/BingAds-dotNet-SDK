@@ -814,6 +814,19 @@ namespace Microsoft.BingAds.V13.Internal.Bulk
         public const string CampaignNegativeDynamicSearchAdTarget = "Campaign Negative Dynamic Search Ad Target";
         public const string AdGroupNegativeDynamicSearchAdTarget = "Ad Group Negative Dynamic Search Ad Target";
         public const string AdGroupDynamicSearchAdTarget = "Ad Group Dynamic Search Ad Target";
+        public const string AdGroupUrlTarget = "Ad Group Url Target";
+
+        // AIMax URL Inclusions: "Ad Group Url Target" uses its own webpage-condition column headers
+        // (deliberately not the DSA "Dynamic Ad Target *" columns).
+        public const string AdGroupUrlTargetCondition1 = "Ad Group Url Target Condition 1";
+        public const string AdGroupUrlTargetCondition2 = "Ad Group Url Target Condition 2";
+        public const string AdGroupUrlTargetCondition3 = "Ad Group Url Target Condition 3";
+        public const string AdGroupUrlTargetValue1 = "Ad Group Url Target Value 1";
+        public const string AdGroupUrlTargetValue2 = "Ad Group Url Target Value 2";
+        public const string AdGroupUrlTargetValue3 = "Ad Group Url Target Value 3";
+        public const string AdGroupUrlTargetOperator1 = "Ad Group Url Target Operator 1";
+        public const string AdGroupUrlTargetOperator2 = "Ad Group Url Target Operator 2";
+        public const string AdGroupUrlTargetOperator3 = "Ad Group Url Target Operator 3";
 
         public const string DomainLanguage = "Domain Language";
         public const string DynamicAdTargetCondition1 = "Dynamic Ad Target Condition 1";
@@ -865,6 +878,7 @@ namespace Microsoft.BingAds.V13.Internal.Bulk
         public const string CampaignLocationIntentCriterion = "Campaign Location Intent Criterion";
         public const string CampaignNegativeAgeCriterion = "Campaign Negative Age Criterion";
         public const string CampaignNegativeGenderCriterion = "Campaign Negative Gender Criterion";
+        public const string CampaignNegativeDeviceCriterion = "Campaign Negative Device Criterion";
         public const string CampaignNegativeLocationCriterion = "Campaign Negative Location Criterion";
         public const string CampaignRadiusCriterion = "Campaign Radius Criterion";
         public const string CampaignDealCriterion = "Campaign Deal Criterion";

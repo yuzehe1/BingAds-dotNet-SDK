@@ -247,6 +247,8 @@ namespace Microsoft.BingAds.Internal
                         requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authenticationToken.Single());
                     }
 
+                    requestMessage.Headers.Add("Api-Revision", AuthorizationData.SdkApiRevision);
+
                     var httpClient = GlobalSettings.HttpClientProvider.GetHttpClient(serviceType, _environment);
 
                     return await httpClient.SendAsync(requestMessage, HttpCompletionOption.ResponseHeadersRead).ConfigureAwait(false);
